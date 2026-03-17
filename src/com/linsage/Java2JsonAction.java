@@ -174,7 +174,7 @@ public class Java2JsonAction extends AnAction {
         if (text ==null||text ==""){
             return jsonKey;
         }
-        String regPattern = "@JsonProperty\\(\"([\\w\\d_]+)\"\\)";
+        String regPattern = "@JsonProperty\\((?:value\\s*=\\s*)?\"([\\w\\d_]+)\"\\)";
         Pattern pattern = Pattern.compile(regPattern);
         Matcher matcher = pattern.matcher(text);
         if (matcher.find()){
